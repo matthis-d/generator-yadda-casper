@@ -1,4 +1,4 @@
-# generator-casper-yadda [![Build Status](https://secure.travis-ci.org/matthis-d/generator-casper-yadda-generator.png?branch=master)](https://travis-ci.org/matthis-d/generator-casper-yadda-generator)
+# generator-casper-yadda [![Build Status](https://secure.travis-ci.org/matthis-d/generator-casper-yadda.png?branch=master)](https://travis-ci.org/matthis-d/generator-casper-yadda)
 
 > [Yeoman](http://yeoman.io) generator
 
