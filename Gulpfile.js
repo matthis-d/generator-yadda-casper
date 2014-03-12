@@ -11,7 +11,7 @@ gulp.task('bump', function () {
 
 });
 
-gulp.task('tag', ['bump'], function () {
+gulp.task('tag', ['bump'], function (done) {
 
     var pkg = require('./package.json');
     var message = 'Release ' + pkg.version;
@@ -20,7 +20,7 @@ gulp.task('tag', ['bump'], function () {
         .pipe(git.commit(message));
 
     git.tag(pkg.version, message);
-    git.push('origin', 'master', '--tags');
+    git.push('origin', 'master', {args:'--tags'}, done);
 });
 
 gulp.task('npm', ['tag'], function () {
