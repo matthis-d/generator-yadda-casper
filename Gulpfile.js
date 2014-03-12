@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var git = require('gulp-git');
 var bump = require('gulp-bump');
+var exec = require('gulp-exec');
 
 gulp.task('bump', function () {
 
@@ -13,19 +14,26 @@ gulp.task('bump', function () {
 gulp.task('tag', ['bump'], function () {
 
     var pkg = require('./package.json');
-    var v = 'v' + pkg.version;
-    var message = 'Release ' + v;
+    var message = 'Release ' + pkg.version;
 
     gulp.src('./')
         .pipe(git.commit(message));
 
-    git.tag(v, message);
+    git.tag(pkg.version, message);
     git.push('origin', 'master', '--tags');
 });
 
-gulp.task('npm', ['tag'], function (done) {
-    require('child_process').spawn('npm', ['publish'], { stdio: 'inherit' })
-        .on('close', done);
+gulp.task('npm', ['tag'], function () {
+
+    var version = require('./package.json').version;
+
+    var options = {
+        silent: false,
+        version: version
+    };
+
+    gulp.src('./')
+        .pipe(exec('npm publish --tag <%= options.version %>', options));
 });
 
 gulp.task('release', ['npm']);
