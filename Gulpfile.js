@@ -16,11 +16,11 @@ gulp.task('tag', ['bump'], function () {
     var v = 'v' + pkg.version;
     var message = 'Release ' + v;
 
-    return gulp.src('./')
-        .pipe(git.commit(message))
-        .pipe(git.tag(v, message))
-        .pipe(git.push('origin', 'master', '--tags'))
-        .pipe(gulp.dest('./'));
+    gulp.src('./')
+        .pipe(git.commit(message));
+
+    git.tag(v, message);
+    git.push('origin', 'master', '--tags');
 });
 
 gulp.task('npm', ['tag'], function (done) {
