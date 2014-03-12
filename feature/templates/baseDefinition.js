@@ -10,11 +10,21 @@ module.exports.init = function () {
         .given('I am on $SITE', function(site) {
 
             casper.open(site);
+
+            casper.waitForSelector('body', function() {
+                casper.test.assertTextExist('Google');
+            });
         })
 
-        .when('I click on $LABEL', function (labelTitle) {
+        .when('I search $SEARCH', function (search) {
 
-            casper.clickLabel(labelTitle);
+            casper.fill('form', {
+                q: search
+            }, true);
+
+            casper.waitForSelector('body', function() {
+                casper.test.assertTextExist('Google');
+            });
         })
 
         .then('I should have $NUM results', function (number) {

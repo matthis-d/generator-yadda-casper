@@ -37,6 +37,7 @@ var CasperYaddaGenerator = yeoman.generators.Base.extend({
     app: function () {
         this.mkdir('definitions');
         this.mkdir('features');
+        this.mkdir('results');
 
         this.copy('_package.json', 'package.json');
         this.copy('_test.js', 'test.js');
