@@ -50,6 +50,29 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
+### Using the application
+
+#### Running tests
+
+In order to use all functionalities of this generator, it is recommended to install [Gulp](http://gulp.js) globally on your system.
+All you have to do is to run the command ```sudo npm install -g gulp```.
+
+Once this is done, you can use several features of the generator:
+
+If you want to run tests on only changed features, run the command ```gulp watch```. Every time you change a feature, all the scenario of this issue will be ran.
+
+If you want to run all tests you wrote each time you do a change on a JavaScript or a feature file, run the command ```gulp watch-all```.
+
+When you use the gulp tasks (watch and watch-all), the output will always be on your terminal.
+If you want to get results in a XML (in JUnit format), you have to run ```npm test``` or ```./yadda.sh . results/```.
+
+#### Generating features/definitions files
+
+If you want to generate a feature file and a definition file associated to it, you just have to write ```yo casper-yadda:feature yourCoolFeatureName```.
+This will automatically create a feature file in the features folder called ```yourCoolFeatureName.feature``` and a JavaScript file called ```yourCoolFeatureName.js``` placed in definitions folder.
+
+**Be careful!** at the moment, if you generate a new feature without having rewritten a previous generated one, there will be conflicts during the tests because two definitions files will have the same regex.
+
 ## Roadmap
 
 ### Windows

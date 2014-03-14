@@ -23,7 +23,7 @@ var CasperYaddaGenerator = yeoman.generators.Base.extend({
         this.log(this.yeoman);
 
         // replace it with a short and sweet description of your generator
-        this.log(chalk.magenta('You\'re using the fantastic CasperYaddaGenerator generator.'));
+        this.log(chalk.magenta('Ready to test your interfaces?'));
 
         var prompts = [];
 
@@ -43,6 +43,7 @@ var CasperYaddaGenerator = yeoman.generators.Base.extend({
         this.copy('_test.js', 'test.js');
         this.copy('_yadda.sh', 'yadda.sh');
         this.copy('_README.md', 'README.md');
+        this.copy('_Gulpfile.js', 'Gulpfile.js');
     },
 
     projectfiles: function () {

@@ -20,7 +20,7 @@ gulp.task('tag', ['bump'], function (done) {
         .pipe(git.commit(message));
 
     git.tag(pkg.version, message);
-    git.push('origin', 'master', {args:'--tags'}, done);
+    git.push('origin', 'master', {args: '--tags'}, done);
 });
 
 gulp.task('npm', ['tag'], function () {

@@ -13,5 +13,10 @@
         "async": "^0.2.10",
         "process": "^0.6.0",
         "casperjs": "^1.1.0-beta3"
+    },
+    "devDependencies": {
+        "gulp": "^3.5.5",
+        "gulp-exec": "^1.0.4",
+        "gulp-util": "^2.2.14"
     }
 }
