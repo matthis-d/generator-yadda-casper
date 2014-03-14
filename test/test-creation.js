@@ -27,7 +27,8 @@ describe('casper-yadda generator', function () {
             'package.json',
             'test.js',
             'yadda.sh',
-            'README.md'
+            'README.md',
+            'Gulpfile.js'
         ];
 
         helpers.mockPrompt(this.app, {});
