@@ -10,7 +10,7 @@ In my job, I sometimes have to develop some interface tests using [Yadda](https:
 In order no to look for the same files each time I start a new project, I decided to create this Yeoman generator.
 
 At the moment, this plugin just do basic stuff and is only working on Unix environments (due to the use of ```yadda.sh``` in my test).
-Please have a look at the [roadmap](#Roadmap) section.
+Please have a look at the [roadmap](#roadmap) section.
 
 ## Getting Started
 
@@ -91,5 +91,4 @@ MIT
 
 ## Thanks
 
-I would like to thank some of my co-workers who created the file I use for this generator.
-(Names will be added after they agree to appear here).
+I would like to thank some of my co-workers who created some of the files I use in this generator.

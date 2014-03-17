@@ -12,7 +12,8 @@
         "yadda": "^0.10.0",
         "async": "^0.2.10",
         "process": "^0.6.0",
-        "casperjs": "^1.1.0-beta3"
+        "casperjs": "^1.1.0-beta3",
+        "underscore": "^1.6.0"
     },
     "devDependencies": {
         "gulp": "^3.5.5",
